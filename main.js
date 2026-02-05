@@ -6,10 +6,14 @@ btn1.addEventListener("click", () => {
     count++;
     console.log(count);
     document.getElementById("count").innerText = "Count : " + count;
+
+    fetch("database.php?score=" + count);
 });
 
 btn2.addEventListener("click", () => {
     count = 0;
     console.log(count);
     document.getElementById("count").innerText = "Count : " + count;
+
+    fetch("database.php?score=" + count);
 });
