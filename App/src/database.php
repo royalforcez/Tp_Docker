@@ -1,6 +1,6 @@
 <?php
 
-$bdd = mysqli_connect("localhost", "root", "", "docker_db", 3306);
+$bdd = mysqli_connect("db", "root", "", "docker_db", 3306);
 
 $valeur = (int)$_GET['score'];
 
