@@ -7,7 +7,7 @@ btn1.addEventListener("click", () => {
     console.log(count);
     document.getElementById("count").innerText = "Count : " + count;
 
-    fetch("database.php?score=" + count);
+    fetch("http://localhost:8001/database.php?score=" + count);
 });
 
 btn2.addEventListener("click", () => {
@@ -15,5 +15,5 @@ btn2.addEventListener("click", () => {
     console.log(count);
     document.getElementById("count").innerText = "Count : " + count;
 
-    fetch("database.php?score=" + count);
+    fetch("http://localhost:8001/database.php?score=" + count);
 });

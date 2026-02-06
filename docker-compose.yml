@@ -2,13 +2,16 @@ version: '3.8'
 
 services:
   site:
-    build: ./App
+    build: ./App/frontend
     ports:
       - "8000:80"
+
+  back:
+    build: ./App/backend
+    ports:
+      - "8001:80"
     depends_on:
       - db
-    volumes:
-      - ./App/src:/var/www/html/
 
   db:
     image: mysql:8.3
