@@ -3,11 +3,13 @@ version: '3.8'
 services:
   site:
     build: ./App/frontend
+    image: royalforcez/projet_docker:frontend
     ports:
       - "8000:80"
 
   back:
     build: ./App/backend
+    image: royalforcez/projet_docker:backend
     ports:
       - "8001:80"
     depends_on:
