@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  site:
+    build:
+    ports:
+      - "80:80"
+    depends_on:
+      - db
+    volumes:
+      - ./app/src:/var/www/html/
+
+  db:
+    image: mysql:8.3
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: docker_db
+    volumes:
+      - db_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+      PMA_ALLOW_NO_PASSWORD: "true"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
